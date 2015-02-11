@@ -1,0 +1,35 @@
+/* 全体 */
+*{
+	line-height: 150%;
+}
+h1,h2,h3{
+	line-height: 100%;
+}
+
+/* 発起人決定書 */
+h1{
+	margin-top: 1em;
+	text-align: center;
+	font-size: 1.7em;
+	
+}
+
+/* ～を決定した */
+.summary{
+	margin-top: 2em;
+}
+
+/* 記 */
+h2{
+	text-align: center;
+	font-weight: normal;
+	font-size: 1em;
+}
+
+/* 記項目 */
+h3{
+	font-weight: normal;
+	font-size: 1em;
+	margin-top: 2em;
+	margin-bottom: -0.4em;
+}
