@@ -1,5 +1,21 @@
 #!/bin/sh
-wkhtmltopdf http://hogen-teikan/teikan.php teikan.pdf
-wkhtmltopdf http://hogen-teikan/hokkinin_ketteisho.php hokkinin_ketteisho.pdf
-wkhtmltopdf http://hogen-teikan/shunin_shodakusho.php shunin_shodakusho.pdf
-wkhtmltopdf http://hogen-teikan/haraikomi_shomeisho.php haraikomi_shomeisho.pdf
+
+#
+# md2, css -> html, css
+#
+./lib/md2html ./1.md/teikan.md              > ./2.html/teikan.html
+cp            ./1.md/teikan.css               ./2.html/teikan.css
+./lib/md2html ./1.md/haraikomi_shomeisho.md > ./2.html/haraikomi_shomeisho.html
+cp            ./1.md/haraikomi_shomeisho.css  ./2.html/haraikomi_shomeisho.css
+./lib/md2html ./1.md/hokkinin_ketteisho.md  > ./2.html/hokkinin_ketteisho.html
+cp            ./1.md/hokkinin_ketteisho.css   ./2.html/hokkinin_ketteisho.css
+./lib/md2html ./1.md/shunin_shodakusho.md   > ./2.html/shunin_shodakusho.html
+cp            ./1.md/shunin_shodakusho.css    ./2.html/shunin_shodakusho.css
+
+#
+# html -> pdf
+#
+wkhtmltopdf ./2.html/teikan.html              ./3.pdf/teikan.pdf
+wkhtmltopdf ./2.html/hokkinin_ketteisho.html  ./3.pdf/hokkinin_ketteisho.pdf
+wkhtmltopdf ./2.html/shunin_shodakusho.html   ./3.pdf/shunin_shodakusho.pdf
+wkhtmltopdf ./2.html/haraikomi_shomeisho.html ./3.pdf/haraikomi_shomeisho.pdf

@@ -1,7 +1,10 @@
+#!/usr/bin/php
 <?php
 
 // 設定
-define('DOC_NAME', 'shunin_shodakusho');
+
+define('DOC_FILE', $argv[1]);
+define('DOC_NAME', preg_replace('/\..+$/', '', basename($argv[1])));
 
 // Install PSR-0-compatible class autoloader
 spl_autoload_register(function($class){
@@ -17,7 +20,7 @@ require_once(dirname(__FILE__) . '/../lib/php-markdown/Michelf/MarkdownExtra.inc
 use \Michelf\MarkdownExtra;
 
 # MarkDown
-$text = file_get_contents(dirname(__FILE__) . '/' . DOC_NAME . '.md');
+$text = file_get_contents(DOC_FILE);
 
 # 変換
 $html = MarkdownExtra::defaultTransform($text);
