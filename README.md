@@ -1,6 +1,9 @@
 # papers
 各種書類
 
+## 変換方法
+    $ cd directory_to_project
+    $ ./update_pdf.sh
 
 ## Thanks
 
