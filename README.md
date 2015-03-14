@@ -20,3 +20,6 @@ http://michelf.ca/projects/php-markdown/
 Copyright (c) 2004-2006 John Gruber  
 http://daringfireball.net/projects/markdown/
 
+### wkhtmltopdf
+Project maintained by Jakob Truelsen and Ashish Kulkarni.  
+http://wkhtmltopdf.org/
